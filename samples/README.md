@@ -9,6 +9,18 @@
 2. **已知问题**: 缺少 `LIMIT 100`
 3. **口径**: 没有显式区分 amount 单位(分 vs 元)
 
+## ODS 数据特征画像(`docs/` 目录)
+
+`samples/docs/` 下放 ODS 表的数据特征画像,用于审查工具在审查会员域相关 SQL 时识别违规:
+
+| 文件 | 说明 |
+|------|------|
+| `bill-spec.md` | 月度账单报表口径 + `orders` 表数据特征 |
+| `ods_member_info_scd.md` | 会员主档 SCD 数据特征(`op_type` 双取值、删除双校验等坑) |
+| `ods_member_level_scd.md` | 会员等级拉链表数据特征(不过滤删除、`level_id` 需二次映射等) |
+| `ods_member_level_change_log.md` | 等级变更日志数据特征(`user_id` 可空、append-only 等) |
+| `ods_member_3tables_compare.md` | 三表对比与协同方式文档 |
+
 ## 跑示范样本
 
 需要先配 API key(任选其一):
